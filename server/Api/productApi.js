@@ -204,11 +204,12 @@ productApp.post("/AddedItems1",expressAsyncHandler(async(request,response)=>{
    //deleting in cart
    let presentPlot=addedPlot.addedProduct
    let presentRent=addedRent.addedProduct
+   console.log("helo",newUser.deleteItem.type);
    console.log("present plots in cart",presentPlot);
    console.log("present rents in cart",presentRent);
-   presentPlot=presentPlot.filter(per=>(per.name!= newUser.deleteItem.name || per.phNo!=newUser.deleteItem.phNo || per.Address!=newUser.deleteItem.Address))
+   presentPlot=presentPlot.filter(per=>(per.name!= newUser.deleteItem.name || per.phNo!=newUser.deleteItem.phNo || per.Address!=newUser.deleteItem.Address || per.Description!=newUser.deleteItem.Description))
    
-   presentRent=presentRent.filter(per=>(per.name!= newUser.deleteItem.name || per.phNo!=newUser.deleteItem.phNo || per.Address!=newUser.deleteItem.Address))
+   presentRent=presentRent.filter(per=>(per.name!= newUser.deleteItem.name || per.phNo!=newUser.deleteItem.phNo || per.Address!=newUser.deleteItem.Address || per.Type!=newUser.deleteItem.Type))
    
 
    console.log("after deleting in cart of rent",presentRent)
@@ -224,7 +225,7 @@ productApp.post("/AddedItems1",expressAsyncHandler(async(request,response)=>{
    console.log("the userd",addedItem)
    p=addedItem[0].addedItems
    console.log("tod ele",p)
-  p=p.filter(per=>(per.name!= newUser.deleteItem.name || per.phNo!=newUser.deleteItem.phNo || per.Address!=newUser.deleteItem.Address))
+  p=p.filter(per=>(per.name!= newUser.deleteItem.name || per.phNo!=newUser.deleteItem.phNo || per.Address!=newUser.deleteItem.Address || per.Description!=newUser.deleteItem.Description || per.Type!=newUser.deleteItem.Type))
    
    console.log("aft deleting ",p);
    
