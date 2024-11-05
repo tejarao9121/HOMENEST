@@ -1,5 +1,5 @@
 .f{
-    margin-left: 200px;
+    margin-left: 600px;
    
 }
 .m{
@@ -12,6 +12,7 @@
     width:800px;
     margin-top: 100px;
     margin-bottom: 50px;
+    margin-left: 600px;
     
   }
 
@@ -22,4 +23,11 @@
 .t{
     text-decoration-color: blue;
 
+}
+.n{
+   width: 400px;
+}
+.s{
+    width: 600px;
+    margin: auto;
 }

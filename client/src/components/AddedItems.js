@@ -19,16 +19,11 @@ function AddedItems() {
       username: currentUser.username
     }
 
-    let response = await axios.post("http://localhost:4000/product-api/AddedItems", result)
+    let response = await axios.post("http://localhost:4000/product-api/AddedItems",result)
 
     let users = response.data;
-   
-   
-    const m = users.user[0].addedItems;
+    let m = users.user[0].addedItems;
     setuserAddedData(m)
-  
-    
-    //dhkhdh
   }
   f()
 
@@ -40,8 +35,11 @@ function AddedItems() {
     }
     console.log("sending in cart",result);
     
-    let response = await axios.post("http://localhost:4000/product-api/AddedItems1", result)
-    let finalUsers=response.data.userData[0].addedUsers;
+    let response = await axios.post("http://localhost:4000/product-api/AddedItems1",result)
+    console.log("final ",response.data)
+    let finalUsers=response.data.userData[0].addedItems;
+    console.log("final ",finalUsers)
+    setuserAddedData(finalUsers)
    
     
 
@@ -51,11 +49,11 @@ function AddedItems() {
 
 
   return (
-    <div>
-        <div className='container'>
+    
+        <div className='q'>
 
         <div>
-           { userAddedData.length!=0?
+           { (userAddedData || userAddedData.length!=0) ?
           userAddedData.map((item,index)=>{
             return(
             
@@ -98,10 +96,6 @@ function AddedItems() {
 
         </div>
 
-
-
-      
-    </div>
   )
 }
 

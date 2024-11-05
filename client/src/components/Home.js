@@ -46,8 +46,8 @@ function Home() {
     <div >
 
       
-        <h1 className='mt-5'>Welcome to my app</h1>
-        <img className=" m" src="https://img.freepik.com/free-vector/concept-landing-page-house-searching_52683-25080.jpg?size=626&ext=jpg&ga=GA1.2.1691357746.1674371683&semt=ais"></img>
+        <h1 className='mt-5'>Welcome to my App</h1>
+        <img className=" m" src="https://www.chrystopherjames.co.uk/wp-content/uploads/2019/04/HD_PropertyRental_Moment.jpg"></img>
        
         
 
@@ -58,14 +58,14 @@ function Home() {
         <form className='container-fluid' onSubmit={handleSubmit(addUser)}>
           
           <div  className='mt-5'>
-            <h2 className='text-success'>Select the type here</h2>
+            <h2 className='text-success'>Select the type </h2>
           <input className=' m-2'type="radio" id="plot" name="type" value="plot"   {...register("type", { required: true })}/>
          <label htmlFor="plot">Plot</label>
          <input className=' m-2' type="radio" id="rent" name="type" value="rent"    {...register("type", { required: true })}/>
          <label htmlFor="rent">Rent</label>
           </div>
-        <div className="form-group">
-          <input type="text" id='location' className="form-control rounded mt-5" placeholder="Search for location"  {...register("location", { required: true })}/>
+        <div className="form-group s">
+          <input type="text" id='location' className="form-control mt-5 n" placeholder="Search for location"  {...register("location", { required: true })}/>
           <button type="submit" className="btn btn-danger mt-4">search</button>
           
           
@@ -74,7 +74,7 @@ function Home() {
               
 
 
-        <div   className='f'>
+        <div   className='f container-fluid'>
            { finalProducts.length!=0?
           finalProducts.map((item,index)=>{
             return(
@@ -99,7 +99,7 @@ function Home() {
            
              
             )
-          }) :<div className='k'><h1 className='mt-5 t'> Empty</h1></div>
+          }) :<div className='k'><h1 className='mt-5 t'></h1></div>
           } 
           
 
