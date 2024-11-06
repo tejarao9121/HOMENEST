@@ -29,7 +29,7 @@ function Addrent(){
       let f=async()=>{
         console.log(result)
         
-        let response= await axios.post("http://localhost:4000/product-api/Addrent",result)
+        let response= await axios.post("https://homenest-wrz6.onrender.com/product-api/Addrent",result)
         let data=response.data
         console.log(data,"in addrent...")
 

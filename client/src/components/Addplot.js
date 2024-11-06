@@ -33,7 +33,7 @@ function Addplot(){
       let f=async()=>{
         console.log("before sending in addplot",result)
         
-        let response= await axios.post("http://localhost:4000/product-api/AddPlot",result)
+        let response= await axios.post("https://homenest-wrz6.onrender.com/product-api/AddPlot",result)
         let data=response.data
         console.log("after response from db in addplot...",data)
 

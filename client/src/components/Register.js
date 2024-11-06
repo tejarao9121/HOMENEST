@@ -38,7 +38,7 @@ function Register() {
 
      console.log(userObj)
      
-     let response= await axios.post("http://localhost:4000/user-api/Register",userObj)
+     let response= await axios.post("https://homenest-wrz6.onrender.com/user-api/Register",userObj)
      let data=response.data
      console.log(data,"in register...")
      

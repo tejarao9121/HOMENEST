@@ -117,7 +117,7 @@ function AddedItems() {
     const fetchUserData = async () => {
       try {
         const result = { username: currentUser.username };
-        let response = await axios.post("http://localhost:4000/product-api/AddedItems", result);
+        let response = await axios.post("https://homenest-wrz6.onrender.com/product-api/AddedItems", result);
         let users = response.data;
         let m = users.user[0].addedItems;
         setuserAddedData(m);
@@ -132,7 +132,7 @@ function AddedItems() {
   const onDeleteUser = async (item) => {
     const result = { username: currentUser.username, deleteItem: item };
     try {
-      let response = await axios.post("http://localhost:4000/product-api/AddedItems1", result);
+      let response = await axios.post("https://homenest-wrz6.onrender.com/product-api/AddedItems1", result);
       let finalUsers = response.data.userData[0].addedItems;
       setuserAddedData(finalUsers);
     } catch (error) {
