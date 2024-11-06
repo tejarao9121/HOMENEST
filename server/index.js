@@ -8,6 +8,7 @@ app.listen(4000,()=>{
 
 const cors = require('cors');
 
+
 const corsOptions = {
     origin: '*',
     credentials: true,
@@ -21,15 +22,14 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Headers', true);
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    next();
+    next();
 });
 
 
-
-
 const mclient=require('mongodb').MongoClient;
+require('dotenv').config();
 
-mclient.connect('mongodb://127.0.0.1:27017/EcomAppdb')
+mclient.connect(process.env.MONGO_URI )
 .then(dbRef=>{
    
     let dbobj=dbRef.db('EcomAppdb')
